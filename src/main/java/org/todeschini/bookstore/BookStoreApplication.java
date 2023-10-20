@@ -12,12 +12,15 @@ public class BookStoreApplication {
 
 	public static void main(String[] args) {
 
+		//comentado pois está não é uma app web
 		//SpringApplication.run(BookStoreApplication.class, args);
+		// permite configurar o spring para que pegar o seu contexto sem ser uma app web
 		ConfigurableApplicationContext ctx = new SpringApplicationBuilder(BookStoreApplication.class)
 				.headless(false)
 				.web(WebApplicationType.NONE) // nao é uma aplicacao web
 				.run(args);
 
+		// carrega o jframe swing de forma que controle o ciclo de vida da app pelo contexto do spwing
 		java.awt.EventQueue.invokeLater(() -> {
 			// instancia do objeto swing
 			// obtem uma instancia de JFrame atraves de @Component do spring

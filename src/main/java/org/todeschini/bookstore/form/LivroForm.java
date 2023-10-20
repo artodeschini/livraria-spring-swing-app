@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-@Component
+@Component // permite o spring invocar essa classe como um dos seus componentes
 public class LivroForm extends JFrame {
 
     private IBookStoreService service;
@@ -32,7 +32,7 @@ public class LivroForm extends JFrame {
 
     private JButton jbDeletar = new JButton();
 
-    @Autowired
+    @Autowired // permite a injecao do Servico criado com spring
     public LivroForm(IBookStoreService service) {
         this.service = service;
         this.mock();
